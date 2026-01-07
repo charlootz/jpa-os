@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.jpa-os.scheduler</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Users/jpa/jpa-os/.venv/bin/python</string>
+        <string>-m</string>
+        <string>engine.scheduler.daemon</string>
+    </array>
+
+    <key>WorkingDirectory</key>
+    <string>/Users/jpa/jpa-os</string>
+
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>PATH</key>
+        <string>/Users/jpa/jpa-os/.venv/bin:/usr/local/bin:/usr/bin:/bin</string>
+    </dict>
+
+    <key>RunAtLoad</key>
+    <true/>
+
+    <key>KeepAlive</key>
+    <true/>
+
+    <key>StandardOutPath</key>
+    <string>/Users/jpa/jpa-os/logs/scheduler.log</string>
+
+    <key>StandardErrorPath</key>
+    <string>/Users/jpa/jpa-os/logs/scheduler.error.log</string>
+</dict>
+</plist>

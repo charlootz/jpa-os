@@ -1,0 +1,32 @@
+display_information:
+  name: Vega
+  description: "COO of jpa-os. Routes work, keeps score, protects jpa's time."
+  background_color: "#1f6feb"
+
+features:
+  bot_user:
+    display_name: Vega
+    always_online: false
+
+oauth_config:
+  scopes:
+    bot:
+      - channels:history
+      - channels:read
+      - chat:write
+      - groups:history
+      - groups:read
+      - im:history
+      - im:read
+      - im:write
+      - users:read
+
+settings:
+  event_subscriptions:
+    bot_events:
+      - app_mention
+      - message.im
+  interactivity:
+    is_enabled: false
+  org_deploy_enabled: false
+  socket_mode_enabled: true

@@ -1,0 +1,7 @@
+INFO:__main__:Scheduler daemon starting...
+INFO:__main__:Timezone: America/New_York
+INFO:__main__:Loaded 4 routines:
+INFO:__main__:  - morning_brief: 0 8 * * 1-5
+INFO:__main__:  - evening_recap: 0 18 * * 1-5
+INFO:__main__:  - proactive_checkin: 0 14 * * 1-5
+INFO:__main__:  - weekly_review: 0 17 * * 5

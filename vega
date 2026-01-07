@@ -1,0 +1,14 @@
+#!/bin/bash
+# Talk to Vega — jpa-os COO
+# Just run: vega
+
+cd ~/jpa-os
+source .venv/bin/activate 2>/dev/null
+
+if [ $# -eq 0 ]; then
+    # No args = TUI mode
+    python -m engine
+else
+    # Args = pass to Vega
+    python -m engine "$@"
+fi

@@ -1,0 +1,14 @@
+[
+  {
+    "id": "task_20260107_083143_0",
+    "description": "Test task: write 'hello world' to vault/hive/test.md",
+    "priority": 2,
+    "status": "pending",
+    "created_at": "2026-01-07T08:31:43.922930",
+    "started_at": null,
+    "completed_at": null,
+    "result": null,
+    "error": null,
+    "source": "test"
+  }
+]
