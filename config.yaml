@@ -1,0 +1,58 @@
+# jpa-os config
+
+mission: |
+  JP is playing to win. This is not productivity software.
+  This is a performance system. The score matters.
+  
+  You are JP's edge. Every action should increase the score.
+  If it doesn't move the number, question why you're doing it.
+  
+  Win conditions:
+  - Ship Custom Records and make it undeniable
+  - Be the person leadership trusts with the hardest problems
+  - Build a reputation that compounds
+  - Stay three moves ahead
+
+me:
+  name: JP
+  aliases: ["Joe", "Joseph", "jpa"]
+  role: Product at Ramp
+  timezone: America/New_York
+
+score:
+  current: 0
+  streak: 0
+  thresholds:
+    losing: 50
+    winning: 70
+    dominant: 85
+
+projects:
+  custom-records:
+    status: active
+    description: "Building custom data fields for Ramp - positioning as the operating system for business data"
+    repo: ~/Documents/dev/web/custom-records
+    slack_channels:
+      - "#custom-records"
+    keywords:
+      - custom fields
+      - airtable
+      - properties
+      - business data
+
+  wayfinder:
+    status: active
+    description: "Navigation system for Ramp's NYC office"
+    repo: ~/Documents/dev/web/wayfinder
+    slack_channels:
+      - "#wayfinder"
+    keywords:
+      - navigation
+      - office
+      - NYC
+
+people: []
+  # - name: Sarah Chen
+  #   role: EM, Custom Records
+  #   slack: "@sarah.chen"
+  #   notes: "direct, likes data"
