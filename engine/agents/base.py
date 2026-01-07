@@ -25,12 +25,22 @@ logger = logging.getLogger(__name__)
 
 # Default directories agents can access
 ROOT = Path(__file__).parent.parent.parent
-DEFAULT_ADD_DIRS = [
-    str(ROOT / "vault"),
-    "/Users/jpa/Documents/self",
-    "/Users/jpa/Documents/hiring",
-    "/Users/jpa/Documents/dev",
-]
+
+def get_add_dirs() -> list:
+    """Get directories that exist for agent access."""
+    dirs = [str(ROOT / "vault")]
+
+    # Only add local paths if they exist (won't exist on Railway)
+    local_paths = [
+        "/Users/jpa/Documents/self",
+        "/Users/jpa/Documents/hiring",
+        "/Users/jpa/Documents/dev",
+    ]
+    for path in local_paths:
+        if Path(path).exists():
+            dirs.append(path)
+
+    return dirs
 
 # Default tools for COO
 COO_TOOLS = [
@@ -109,7 +119,7 @@ async def run_vega(task: str, stream_callback=None) -> str:
             allowed_tools=COO_TOOLS,
             permission_mode="acceptEdits",
             cwd=str(ROOT),
-            add_dirs=DEFAULT_ADD_DIRS,
+            add_dirs=get_add_dirs(),
             setting_sources=["project"],
         )
     ):
@@ -157,7 +167,7 @@ async def run_vega_autonomous(
         allowed_tools=COO_TOOLS,
         permission_mode="acceptEdits",
         cwd=str(ROOT),
-        add_dirs=DEFAULT_ADD_DIRS,
+        add_dirs=get_add_dirs(),
         setting_sources=["project"],
         hooks=hooks,
     )
@@ -216,7 +226,7 @@ async def run_vega_streaming(task: str):
             allowed_tools=COO_TOOLS,
             permission_mode="acceptEdits",
             cwd=str(ROOT),
-            add_dirs=DEFAULT_ADD_DIRS,
+            add_dirs=get_add_dirs(),
             setting_sources=["project"],
         )
     ):
@@ -272,7 +282,7 @@ async def run_agent(
             allowed_tools=allowed_tools,
             permission_mode="acceptEdits",
             cwd=str(ROOT),
-            add_dirs=DEFAULT_ADD_DIRS,
+            add_dirs=get_add_dirs(),
             setting_sources=["project"],
         )
     ):
