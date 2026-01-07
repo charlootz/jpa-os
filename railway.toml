@@ -2,7 +2,5 @@
 builder = "nixpacks"
 
 [deploy]
-startCommand = "python -m engine.discord.dispatcher"
-healthcheckPath = "/"
-healthcheckTimeout = 300
+startCommand = "python -m engine.main"
 restartPolicyType = "always"

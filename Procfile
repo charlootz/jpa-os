@@ -1,1 +1,1 @@
-worker: python -m engine.discord.dispatcher
+worker: python -m engine.main
